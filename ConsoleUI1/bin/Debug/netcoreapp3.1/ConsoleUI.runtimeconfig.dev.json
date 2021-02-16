@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\casper\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\casper\\.nuget\\packages"
+    ]
+  }
+}
