@@ -7,3 +7,15 @@ C:\Users\casper\source\repos\ReCapProject1\Entity\obj\Debug\netstandard2.0\Entit
 C:\Users\casper\source\repos\ReCapProject1\Entity\obj\Debug\netstandard2.0\Entity.csproj.CoreCompileInputs.cache
 C:\Users\casper\source\repos\ReCapProject1\Entity\obj\Debug\netstandard2.0\Entity.dll
 C:\Users\casper\source\repos\ReCapProject1\Entity\obj\Debug\netstandard2.0\Entity.pdb
+C:\Users\casper\source\repos\ReCapProject\Entity\bin\Debug\netstandard2.0\Entity.deps.json
+C:\Users\casper\source\repos\ReCapProject\Entity\bin\Debug\netstandard2.0\Entity.dll
+C:\Users\casper\source\repos\ReCapProject\Entity\bin\Debug\netstandard2.0\Entity.pdb
+C:\Users\casper\source\repos\ReCapProject\Entity\bin\Debug\netstandard2.0\Core.dll
+C:\Users\casper\source\repos\ReCapProject\Entity\bin\Debug\netstandard2.0\Core.pdb
+C:\Users\casper\source\repos\ReCapProject\Entity\obj\Debug\netstandard2.0\Entity.csprojAssemblyReference.cache
+C:\Users\casper\source\repos\ReCapProject\Entity\obj\Debug\netstandard2.0\Entity.AssemblyInfoInputs.cache
+C:\Users\casper\source\repos\ReCapProject\Entity\obj\Debug\netstandard2.0\Entity.AssemblyInfo.cs
+C:\Users\casper\source\repos\ReCapProject\Entity\obj\Debug\netstandard2.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\casper\source\repos\ReCapProject\Entity\obj\Debug\netstandard2.0\Entity.csproj.CopyComplete
+C:\Users\casper\source\repos\ReCapProject\Entity\obj\Debug\netstandard2.0\Entity.dll
+C:\Users\casper\source\repos\ReCapProject\Entity\obj\Debug\netstandard2.0\Entity.pdb

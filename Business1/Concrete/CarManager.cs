@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entity.Concrete;
+using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -43,6 +44,11 @@ namespace Business.Concrete
             {
                 Console.WriteLine("Hata!! Description 2 karakterden fazla olmalı ve fiyat 0 dan büyük olmalı!");
             }
+        }
+
+        public List<CarDetailDto> GetCarDetailDtos()
+        {
+            return _ıcarDal.GetCarDetailDtos();
         }
     }
 }

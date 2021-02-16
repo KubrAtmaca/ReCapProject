@@ -1,5 +1,7 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using Entity.Concrete;
+using Entity.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,51 +11,27 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCarDal : ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, ReCapProjectContex>, ICarDal
     {
-        public void Add(Car entity)
+        public List<CarDetailDto> GetCarDetailDtos()
         {
-            using (ReCapProject1Contex contex=new ReCapProject1Contex())
+            using (ReCapProjectContex contex=new ReCapProjectContex())
             {
-                var addedEntity = contex.Entry(entity);
-                addedEntity.State = EntityState.Added;
-                contex.SaveChanges();
-            }
-        }
+                var result = from ca in contex.Cars
+                             join co in contex.Colors
+                             on ca.ColorId equals co.ColorId
+                             join b in contex.Brands
+                             on ca.BrandId equals b.BrandId
+                             select new CarDetailDto
+                             {
+                                 CarId=ca.CarId,
+                                 CarName=ca.CarName,
+                                 BrandName=b.BrandName,
+                                 ColorName=co.ColorName
 
-        public void Delete(Car entity)
-        {
-            using (ReCapProject1Contex contex=new ReCapProject1Contex())
-            {
-                var deletedEntity = contex.Entry(entity);
-                deletedEntity.State = EntityState.Deleted;
-                contex.SaveChanges();
-            }
-        }
-
-        public Car Get(Expression<Func< Car, bool >> filter )
-        {
-            using (ReCapProject1Contex contex=new ReCapProject1Contex())
-            {
-                return contex.Set<Car>().SingleOrDefault(filter);
-            }
-        }
-
-        public List<Car> GetAll(Expression<Func< Car, bool >> filter  = null)
-        {
-            using (ReCapProject1Contex contex=new ReCapProject1Contex())
-            {
-                return filter == null ? contex.Set<Car>().ToList() : contex.Set<Car>().Where(filter).ToList();
-            }
-        }
-
-        public void Update(Car entity)
-        {
-            using (ReCapProject1Contex contex=new ReCapProject1Contex())
-            {
-                var updatedEntity = contex.Entry(entity);
-                updatedEntity.State = EntityState.Modified;
-                contex.SaveChanges();
+                             };
+                return result.ToList();
+               
             }
         }
     }
