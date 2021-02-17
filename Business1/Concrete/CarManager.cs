@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results.Abstact;
+using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using Entity.Concrete;
 using Entity.DTOs;
@@ -20,35 +22,25 @@ namespace Business.Concrete
         {
 
         }
-        public List<Car> GetAll()
+
+        public IDataResult<List<Car>> GetAll()
         {
-            return _ıcarDal.GetAll();
+            return new SuccessDataResult<List<Car>>(_ıcarDal.GetAll());
         }
 
-        public List<Car> GetAllByBrandId(int id)
+        public IDataResult<List<Car>> GetAllByBrandId(int id)
         {
-            return _ıcarDal.GetAll(c => c.BrandId == id);
+            return new SuccessDataResult<List<Car>>(_ıcarDal.GetAll(c => c.BrandId == id));
         }
 
-        public List<Car> GetAllById(int id)
+        public IDataResult<List<Car>> GetAllById(int id)
         {
-            return _ıcarDal.GetAll(c => c.CarId == id);
-        }
-        public void Add(Car car)
-        {
-            if (car.Description.Length>=2 && car.DailyPrice>0)
-            {
-                _ıcarDal.Add(car);
-            }
-            else
-            {
-                Console.WriteLine("Hata!! Description 2 karakterden fazla olmalı ve fiyat 0 dan büyük olmalı!");
-            }
+            return new SuccessDataResult<List<Car>>(_ıcarDal.GetAll(c => c.CarId == id));
         }
 
-        public List<CarDetailDto> GetCarDetailDtos()
+        public IDataResult<List<CarDetailDto>> GetCarDetailDtos()
         {
-            return _ıcarDal.GetCarDetailDtos();
+            return new SuccessDataResult<List<CarDetailDto>>(_ıcarDal.GetCarDetailDtos());
         }
     }
 }
