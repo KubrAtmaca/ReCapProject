@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results.Abstact;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
@@ -41,6 +42,26 @@ namespace Business.Concrete
         public IDataResult<List<CarDetailDto>> GetCarDetailDtos()
         {
             return new SuccessDataResult<List<CarDetailDto>>(_ıcarDal.GetCarDetailDtos());
+        }
+
+        public IResult Add(Car car)
+        {
+            return new SuccessResult(Messages.Added);
+        }
+
+        public IDataResult<Car> GetById(int carId)
+        {
+            return new SuccessDataResult<Car>(_ıcarDal.Get(c => c.CarId == carId));
+        }
+
+        public IResult Delete(Car car)
+        {
+            return new SuccessResult(Messages.Deleted);
+        }
+
+        public IResult Update(Car car)
+        {
+            return new SuccessResult(Messages.Updated);
         }
     }
 }

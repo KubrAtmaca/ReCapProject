@@ -15,7 +15,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public List<CarDetailDto> GetCarDetailDtos()
         {
-            using (ReCapProjectContex contex=new ReCapProjectContex())
+            using (ReCapProjectContex contex = new ReCapProjectContex())
             {
                 var result = from ca in contex.Cars
                              join co in contex.Colors
@@ -24,15 +24,17 @@ namespace DataAccess.Concrete.EntityFramework
                              on ca.BrandId equals b.BrandId
                              select new CarDetailDto
                              {
-                                 CarId=ca.CarId,
-                                 CarName=ca.CarName,
-                                 BrandName=b.BrandName,
-                                 ColorName=co.ColorName
+                                 CarId = ca.CarId,
+                                 CarName = ca.CarName,
+                                 BrandName = b.BrandName,
+                                 ColorName = co.ColorName
 
                              };
                 return result.ToList();
-               
+
             }
         }
     }
 }
+         
+

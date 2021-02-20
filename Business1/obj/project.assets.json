@@ -7165,6 +7165,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Core >= 1.0.0",
       "DataAccess >= 1.0.0",
       "Entity >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
@@ -7197,6 +7198,9 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+            "C:\\Users\\casper\\source\\repos\\ReCapProject\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\casper\\source\\repos\\ReCapProject\\Core\\Core.csproj"
+            },
             "C:\\Users\\casper\\source\\repos\\ReCapProject\\DataAccess\\DataAccess.csproj": {
               "projectPath": "C:\\Users\\casper\\source\\repos\\ReCapProject\\DataAccess\\DataAccess.csproj"
             },
